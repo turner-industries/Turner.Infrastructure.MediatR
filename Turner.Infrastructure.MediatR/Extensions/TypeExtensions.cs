@@ -5,6 +5,13 @@ namespace Turner.Infrastructure.MediatR.Extensions
 {
     public static class TypeExtensions
     {
+        public static bool ContainsAttribute(this Type type, Type attributeType)
+        {
+            var customAttribute = Attribute.GetCustomAttribute(type, attributeType);
+
+            return customAttribute != null;
+        }
+
         public static string GetPrettyName(this Type type)
         {
             var prettyName = type.Name;
