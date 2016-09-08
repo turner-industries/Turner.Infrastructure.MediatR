@@ -55,12 +55,12 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Turner.Infrastructure">
+      <HintPath>..\lib\Turner.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="Turner.Infrastructure.Exceptions.Core, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Turner.Infrastructure.Exceptions.Core.1.1.16250.03\lib\net452\Turner.Infrastructure.Exceptions.Core.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="Turner.Infrastructure.Logging">
-      <HintPath>..\lib\Turner.Infrastructure.Logging.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
