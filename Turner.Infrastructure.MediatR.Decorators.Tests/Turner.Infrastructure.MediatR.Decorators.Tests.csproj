@@ -55,6 +55,9 @@
     <Reference Include="Turner.Infrastructure.Exceptions.Core">
       <HintPath>..\packages\Turner.Infrastructure.Exceptions.Core.1.1.16250.03\lib\net452\Turner.Infrastructure.Exceptions.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Turner.Infrastructure.Logging">
+      <HintPath>..\lib\Turner.Infrastructure.Logging.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">

@@ -1,11 +1,11 @@
 ﻿using MediatR;
 using Newtonsoft.Json;
+using Turner.Infrastructure.Logging;
 using Turner.Infrastructure.MediatR.Decorators.Extensions;
-using Turner.Infrastructure.MediatR.Decorators.Interfaces;
 
 namespace Turner.Infrastructure.MediatR.Decorators.Handlers
 {
-    public class LoggingHandler<TRequest, TResponse> : IRequestHandler<TRequest, TResponse> 
+    public class LoggingHandler<TRequest, TResponse> : IRequestHandler<TRequest, TResponse>
         where TRequest : IRequest<TResponse>
     {
         private readonly IRequestHandler<TRequest, TResponse> _inner;
@@ -22,7 +22,7 @@ namespace Turner.Infrastructure.MediatR.Decorators.Handlers
         {
             var type = request.GetType();
             _log.Information($"Logging: TRequest: {type.GetPrettyName()}");
-            
+
             if (type.GenericTypeArguments.Length == 0)
             {
                 _log.Information($"JSON {type.GetPrettyName()}: {JsonConvert.SerializeObject(request)}");

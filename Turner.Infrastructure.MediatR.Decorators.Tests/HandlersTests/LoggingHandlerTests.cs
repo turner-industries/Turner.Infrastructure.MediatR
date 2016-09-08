@@ -1,6 +1,7 @@
 using MediatR;
 using NSubstitute;
 using NUnit.Framework;
+using Turner.Infrastructure.Logging;
 using Turner.Infrastructure.MediatR.Decorators.Handlers;
 using Turner.Infrastructure.MediatR.Decorators.Interfaces;
 using Turner.Infrastructure.MediatR.Decorators.Tests.Common;

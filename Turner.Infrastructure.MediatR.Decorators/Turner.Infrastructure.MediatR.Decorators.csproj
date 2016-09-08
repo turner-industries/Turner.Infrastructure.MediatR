@@ -55,6 +55,9 @@
       <HintPath>..\packages\Turner.Infrastructure.Exceptions.Core.1.1.16250.03\lib\net452\Turner.Infrastructure.Exceptions.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Turner.Infrastructure.Logging">
+      <HintPath>..\lib\Turner.Infrastructure.Logging.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes.cs" />
@@ -64,7 +67,6 @@
     <Compile Include="Handlers\MediatorPipeline.cs" />
     <Compile Include="Handlers\TransactionHandler.cs" />
     <Compile Include="Handlers\ValidationHandler.cs" />
-    <Compile Include="Interfaces\ILogger.cs" />
     <Compile Include="Interfaces\IPostRequestHandler.cs" />
     <Compile Include="Interfaces\IPreRequestHandler.cs" />
     <Compile Include="Validation\ValidationResultExtensions.cs" />

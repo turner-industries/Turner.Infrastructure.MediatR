@@ -1,33 +1,34 @@
-﻿using System;
+﻿using FluentValidation;
+using FluentValidation.Results;
+using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MediatR;
-using FluentValidation;
-using FluentValidation.Results;
 using Turner.Infrastructure.Exceptions.Core;
+using Turner.Infrastructure.Logging;
 using Turner.Infrastructure.MediatR.Decorators.Extensions;
 using Turner.Infrastructure.MediatR.Decorators.Interfaces;
 using Turner.Infrastructure.MediatR.Decorators.Validation;
 
 namespace Turner.Infrastructure.MediatR.Decorators.Handlers
 {
-    public class ValidationHandler<TRequest, TResponse> : IRequestHandler<TRequest, TResponse> 
+    public class ValidationHandler<TRequest, TResponse> : IRequestHandler<TRequest, TResponse>
         where TRequest : IRequest<TResponse>
     {
         private readonly IRequestHandler<TRequest, TResponse> _inner;
         private readonly IValidator<TRequest> _validator;
         private readonly ILogger _log;
 
-        public ValidationHandler(IRequestHandler<TRequest, TResponse> inner, 
+        public ValidationHandler(IRequestHandler<TRequest, TResponse> inner,
                                 IValidator<TRequest> validator,
                                 ILogger log)
         {
             this._inner = inner;
             this._validator = validator;
-            _log = log;
+            this._log = log;
         }
 
         public TResponse Handle(TRequest request)

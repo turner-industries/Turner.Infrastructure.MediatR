@@ -1,10 +1,11 @@
-﻿using System.Transactions;
-using MediatR;
+﻿using MediatR;
+using System.Transactions;
+using Turner.Infrastructure.Logging;
 using Turner.Infrastructure.MediatR.Decorators.Interfaces;
 
 namespace Turner.Infrastructure.MediatR.Decorators.Handlers
 {
-    public class TransactionHandler<TRequest, TResponse> : IRequestHandler<TRequest, TResponse> 
+    public class TransactionHandler<TRequest, TResponse> : IRequestHandler<TRequest, TResponse>
         where TRequest : IRequest<TResponse>
     {
         private readonly IRequestHandler<TRequest, TResponse> _inner;
