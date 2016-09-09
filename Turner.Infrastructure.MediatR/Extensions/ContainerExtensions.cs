@@ -10,10 +10,10 @@ namespace Turner.Infrastructure.MediatR.Extensions
     {
         public static void ConfigureMediatR(this Container container, Lifestyle lifestyle)
         {
-            var assembly = Assembly.GetExecutingAssembly();
+            var assembly = Assembly.GetCallingAssembly();
 
             container.RegisterCollection(typeof(INotificationHandler<>), assembly);
-            container.Register(typeof(IRequestHandler<,>), new[] { assembly }, Lifestyle.Transient);
+            container.Register(typeof(IRequestHandler<,>), new[] { assembly }, lifestyle);
             container.RegisterCollection(typeof(IPreRequestHandler<>), assembly);
             container.RegisterCollection(typeof(IPostRequestHandler<,>), assembly);
 
