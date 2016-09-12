@@ -52,8 +52,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="Turner.Infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Turner.Infrastructure.1.0.6\lib\Turner.Infrastructure.dll</HintPath>
+    <Reference Include="Turner.Infrastructure, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Turner.Infrastructure.1.0.13\lib\Turner.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Turner.Infrastructure.Exceptions.Core">
