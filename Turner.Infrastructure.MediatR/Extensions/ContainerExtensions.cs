@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using SimpleInjector;
 using System.Reflection;
+using FluentValidation;
 using Turner.Infrastructure.MediatR.Handlers;
-using Turner.Infrastructure.MediatR.Interfaces;
 
 namespace Turner.Infrastructure.MediatR.Extensions
 {
@@ -16,6 +16,8 @@ namespace Turner.Infrastructure.MediatR.Extensions
             container.Register(typeof(IRequestHandler<,>), new[] { assembly }, lifestyle);
             container.RegisterCollection(typeof(IPreRequestHandler<>), assembly);
             container.RegisterCollection(typeof(IPostRequestHandler<,>), assembly);
+
+            container.Register(typeof(IValidator<>), new[] { assembly });
 
             container.RegisterDecorator(
                 typeof(IRequestHandler<,>),

@@ -4,7 +4,6 @@ using MediatR;
 using NSubstitute;
 using NUnit.Framework;
 using Turner.Infrastructure.MediatR.Handlers;
-using Turner.Infrastructure.MediatR.Interfaces;
 using Turner.Infrastructure.MediatR.Tests.Common;
 
 namespace Turner.Infrastructure.MediatR.Tests

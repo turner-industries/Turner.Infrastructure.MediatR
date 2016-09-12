@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using FluentValidation.Results;
-using Turner.Infrastructure.Exceptions.Core;
+using Turner.Infrastructure.Exceptions;
 
 namespace Turner.Infrastructure.MediatR.Validation
 {

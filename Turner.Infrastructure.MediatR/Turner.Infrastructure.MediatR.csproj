@@ -55,11 +55,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Turner.Infrastructure">
-      <HintPath>..\lib\Turner.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Turner.Infrastructure.Exceptions.Core, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Turner.Infrastructure.Exceptions.Core.1.1.16250.03\lib\net452\Turner.Infrastructure.Exceptions.Core.dll</HintPath>
+    <Reference Include="Turner.Infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Turner.Infrastructure.1.0.6\lib\Turner.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -71,13 +68,14 @@
     <Compile Include="Handlers\MediatorPipeline.cs" />
     <Compile Include="Handlers\TransactionHandler.cs" />
     <Compile Include="Handlers\ValidationHandler.cs" />
-    <Compile Include="Interfaces\IPostRequestHandler.cs" />
-    <Compile Include="Interfaces\IPreRequestHandler.cs" />
+    <Compile Include="Handlers\IPostRequestHandler.cs" />
+    <Compile Include="Handlers\IPreRequestHandler.cs" />
     <Compile Include="Validation\ValidationResultExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Turner.Infrastructure.MediatR.nuspec" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

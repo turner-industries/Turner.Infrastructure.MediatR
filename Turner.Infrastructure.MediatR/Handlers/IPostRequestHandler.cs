@@ -1,4 +1,4 @@
-﻿namespace Turner.Infrastructure.MediatR.Interfaces
+﻿namespace Turner.Infrastructure.MediatR.Handlers
 {
     public interface IPostRequestHandler<in TRequest, in TResponse>
     {

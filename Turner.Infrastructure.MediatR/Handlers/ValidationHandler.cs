@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using MediatR;
-using Turner.Infrastructure.Exceptions.Core;
+using Turner.Infrastructure.Exceptions;
 using Turner.Infrastructure.Logging;
 using Turner.Infrastructure.MediatR.Extensions;
 using Turner.Infrastructure.MediatR.Validation;

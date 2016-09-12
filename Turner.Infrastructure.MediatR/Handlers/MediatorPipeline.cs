@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Turner.Infrastructure.MediatR.Interfaces;
 
 namespace Turner.Infrastructure.MediatR.Handlers
 {

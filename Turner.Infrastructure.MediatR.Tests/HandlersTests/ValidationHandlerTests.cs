@@ -3,7 +3,7 @@ using FluentValidation.Results;
 using MediatR;
 using NSubstitute;
 using NUnit.Framework;
-using Turner.Infrastructure.Exceptions.Core;
+using Turner.Infrastructure.Exceptions;
 using Turner.Infrastructure.Logging;
 using Turner.Infrastructure.MediatR.Handlers;
 using Turner.Infrastructure.MediatR.Tests.Common;

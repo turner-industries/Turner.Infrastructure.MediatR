@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Turner.Infrastructure.MediatR</id>
+    <version>1.0.0</version>
+    <authors>Turner Industries Group, LLC</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Turner.Infrastructure.MediatR contains Turner Industries Group's command and query architecture.</description>
+    <dependencies>
+      <dependency id="SimpleInjector" version="3.2.2" />
+      <dependency id="FluentValidation" version="6.2.1" />
+      <dependency id="Turner.Infrastructure" version="1.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\Turner.Infrastructure.MediatR.dll" target="lib" />
+  </files>
+</package>
