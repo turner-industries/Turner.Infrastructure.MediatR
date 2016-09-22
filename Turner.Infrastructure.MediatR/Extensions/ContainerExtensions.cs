@@ -11,7 +11,6 @@ namespace Turner.Infrastructure.MediatR.Extensions
     {
         public static void ConfigureMediatR(this Container container, Lifestyle lifestyle)
         {
-
             var entry = Assembly.GetEntryAssembly() ?? Assembly.GetCallingAssembly();
 
             foreach (var assembly in entry.GetReferencedAssemblies())
