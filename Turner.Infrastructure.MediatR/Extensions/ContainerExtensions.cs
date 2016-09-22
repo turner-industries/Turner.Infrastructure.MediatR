@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using System;
+using MediatR;
 using SimpleInjector;
 using System.Reflection;
 using FluentValidation;
@@ -10,14 +11,20 @@ namespace Turner.Infrastructure.MediatR.Extensions
     {
         public static void ConfigureMediatR(this Container container, Lifestyle lifestyle)
         {
-            var assembly = Assembly.GetCallingAssembly();
 
-            container.RegisterCollection(typeof(INotificationHandler<>), assembly);
-            container.Register(typeof(IRequestHandler<,>), new[] { assembly }, lifestyle);
-            container.RegisterCollection(typeof(IPreRequestHandler<>), assembly);
-            container.RegisterCollection(typeof(IPostRequestHandler<,>), assembly);
+            var entry = Assembly.GetEntryAssembly() ?? Assembly.GetCallingAssembly();
 
-            container.Register(typeof(IValidator<>), new[] { assembly });
+            foreach (var assembly in entry.GetReferencedAssemblies())
+            {
+                Assembly.Load(assembly);
+            }
+
+            container.RegisterCollection(typeof(INotificationHandler<>), AppDomain.CurrentDomain.GetAssemblies());
+            container.Register(typeof(IRequestHandler<,>), AppDomain.CurrentDomain.GetAssemblies(), lifestyle);
+            container.RegisterCollection(typeof(IPreRequestHandler<>), AppDomain.CurrentDomain.GetAssemblies());
+            container.RegisterCollection(typeof(IPostRequestHandler<,>), AppDomain.CurrentDomain.GetAssemblies());
+
+            container.Register(typeof(IValidator<>), AppDomain.CurrentDomain.GetAssemblies());
 
             container.RegisterDecorator(
                 typeof(IRequestHandler<,>),
