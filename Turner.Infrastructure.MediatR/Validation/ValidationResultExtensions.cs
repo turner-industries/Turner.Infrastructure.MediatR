@@ -12,7 +12,7 @@ namespace Turner.Infrastructure.MediatR.Validation
 
             foreach (var error in validationResult.Errors)
             {
-                violations.Add(new BusinessRuleViolation(error.ErrorMessage));
+                violations.Add(new BusinessRuleViolation(error.ErrorMessage, error.PropertyName));
             }
 
             return violations;

@@ -1,3 +1,4 @@
+using System.Linq;
 using FluentValidation;
 using FluentValidation.Results;
 using MediatR;
@@ -8,7 +9,7 @@ using Turner.Infrastructure.Logging;
 using Turner.Infrastructure.MediatR.Handlers;
 using Turner.Infrastructure.MediatR.Tests.Common;
 
-namespace Turner.Infrastructure.MediatR.Tests
+namespace Turner.Infrastructure.MediatR.Tests.HandlersTests
 {
     [TestFixture]
     public class ValidationTests
@@ -36,7 +37,10 @@ namespace Turner.Infrastructure.MediatR.Tests
 
             var handler = new ValidationHandler<Request, string>(inner, validator, logger);
 
-            NUnit.Framework.Assert.Throws<BusinessRuleException>(() => handler.Handle(new Request()));
+            var e = Assert.Throws<BusinessRuleException>(() => handler.Handle(new Request()));
+            Assert.AreEqual(e.Violations.First().PropertyName, "foo");
+            Assert.AreEqual(e.Violations.First().Violation, "bar");
+
             inner.DidNotReceive().Handle(Arg.Any<Request>());
         }
     }

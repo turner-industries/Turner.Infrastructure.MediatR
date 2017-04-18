@@ -11,7 +11,7 @@ namespace Turner.Infrastructure.MediatR.Tests.Common
         {
             _result = result;
 
-            Custom(request => !_result ? new ValidationFailure("", "") : null);
+            Custom(request => !_result ? new ValidationFailure("foo", "bar") : null);
         }
     }
 }
